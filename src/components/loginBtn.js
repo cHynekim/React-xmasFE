@@ -17,7 +17,10 @@ const LogBtn = (props) => {
                     style={{ backgroundColor: data.idx === clickedIdx ? data.clickBg : data.bg }}
                     key={data.idx}
                     type="submit"
-                    onClick={() => {
+                    onClick={(e) => {
+                        if(e.target.innerHTML == '새 노트북 만들기'){
+                            props.onChangeMode('laptop');
+                        }
                         props.onChangeToggle();
                         if(!props.toggle){
                             console.log(props.toggle);
@@ -28,8 +31,7 @@ const LogBtn = (props) => {
                         // }
                         setReadySocial(data.idx);
                         setClickedIdx(data.idx);
-                        setTimeout(() => setClickedIdx(null), 100);
-                }}>
+                        setTimeout(() => setClickedIdx(null), 100);}}>
                     {data.txt}
                 </button>
                 {readySocial === data.idx && (

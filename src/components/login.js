@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import LogBtn from './loginBtn.js';
 import '../res/style/login.css'
 
-const Login = () => {
+const Login = (props) => {
     const [cont, setCont] = useState([
         {idx : 0, txt : "내 노트북 찾기", bg : '#1FB4A2', clickBg : '#218E80'},
         {idx : 1, txt : "새 노트북 만들기", bg : '#f66', clickBg : '#D25C5C'}
@@ -29,7 +29,9 @@ const Login = () => {
                     onChangeToggle={()=>{
                         setToggle(!toggle);
                     }}
-                ></LogBtn>
+                    //노트북/편지 모드 변경 함수 전달
+                    onChangeMode={props.onChangeMode}>
+                </LogBtn>
             </div>
         </div>
     );
