@@ -6,7 +6,8 @@ import { useState } from 'react';
 
 function App() {
   //laptop, letter 각각 두 state 이용 : default, laptop
-  const [customMode, setCustomMode] = useState();
+  const [customMode, setCustomMode] = useState('laptop');
+  //Routing 후에는 'laptop' 삭제할 것
   //위의 setCustomMode는 각각 트리거 버튼이 있는 컴포넌트로 함수에 싸서 보내기 (후에 해당 component에서 onClick 구현)
   const [contents, setContents] = useState([
     {sub : 'logIn', title : '노트북을 고르시오.'},
@@ -30,16 +31,17 @@ function App() {
     option = options[1];
   }
   custom = <Custom sub={sub} title={title} option={option} />
-  //console.log(customMode); => 새노트북만들기btn 클릭 시 laptop 출력 잘 됨!
-  // console.log(sub, title, option); => 이것도 굿
+  // console.log(customMode); // => 새노트북만들기btn 클릭 시 laptop 출력 잘 됨!
+  // console.log(sub, title, option); // => 이것도 굿
   //08 dec, 여기까지 작업 / 후에 custom 개발하기
+  //외부 링크에서 편지 작성 btn 클릭시 modeChange 로직도 구현해야함
   return (
     <div className='App'>
-      <Login
+      {/* <Login
         onChangeMode={(mode)=>{
           setCustomMode(mode);
         }}>
-      </Login>
+      </Login> */}
       {custom}
     </div>
   );
