@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Laptop from "./laptop";
 import Letter from "./letter";
 
@@ -8,9 +9,18 @@ const Custom = (props) => {
     title = props.title;
     console.log(sub, title);
 
+    const [laptopColour, setLaptopColour] = useState(
+        //onClick func은 설정슬라이드 컴포넌트에 설정할 것
+        'white'
+    );
+    const [laptopBrand, setLaptopBrand] = useState('samsung');
+
+
     let article;
     if(props.mode === 'laptop'){
-        article = <Laptop />
+        article = <Laptop 
+                    colour={laptopColour}
+                    brand={laptopBrand}/>
     }
     else if(props.mode === 'letter'){
         article = <Letter />

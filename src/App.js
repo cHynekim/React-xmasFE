@@ -30,7 +30,7 @@ function App() {
     title = contents[1].title;
     option = options[1];
   }
-  custom = <Custom sub={sub} title={title} option={option} />
+  custom = <Custom mode={customMode} sub={sub} title={title} option={option} />
   // console.log(customMode); // => 새노트북만들기btn 클릭 시 laptop 출력 잘 됨!
   // console.log(sub, title, option); // => 이것도 굿
   //08 dec, 여기까지 작업 / 후에 custom 개발하기
