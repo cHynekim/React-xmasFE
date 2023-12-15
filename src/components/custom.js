@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Laptop from "./laptop";
 import Letter from "./letter";
+import Buttons from "./buttons";
+import { useEffect } from "react";
 
 const Custom = (props) => {
     let sub, title;
@@ -9,6 +11,7 @@ const Custom = (props) => {
     title = props.title;
     console.log(sub, title);
 
+    //default value
     const [laptopColour, setLaptopColour] = useState(
         //onClick func은 설정슬라이드 컴포넌트에 설정할 것
         'white'
@@ -26,6 +29,17 @@ const Custom = (props) => {
         article = <Letter />
     } 
 
+    const [btnColour, setBtnColour] = useState();
+    useEffect(() => {
+        if(props.mode === 'laptop'){
+            setBtnColour('#f66');
+        }
+        else if(props.mode === 'letter'){
+            setBtnColour('#1fb4a2');
+        }
+    }, [props.mode]);
+    
+
     return(
         <div>
             <div>
@@ -36,6 +50,7 @@ const Custom = (props) => {
                 <span>&#34;&#41;&#59;&nbsp;&#125;</span>
             </div>
             {article}
+            <Buttons colour={btnColour}/>
         </div>
     );
 }
