@@ -3,13 +3,14 @@ import Laptop from "./laptop";
 import Letter from "./letter";
 import Buttons from "./buttons";
 import { useEffect } from "react";
+import OptSlide from "./optionSlide";
 
 const Custom = (props) => {
-    let sub, title;
-    console.log(props);
+    let sub, title, options;
+    // console.log(props);
     sub = props.sub;
     title = props.title;
-    console.log(sub, title);
+    options = props.option;
 
     //default value
     const [laptopColour, setLaptopColour] = useState(
@@ -17,7 +18,8 @@ const Custom = (props) => {
         'white'
     );
     const [laptopBrand, setLaptopBrand] = useState('samsung');
-
+    const [letterStk, setLetterStk] = useState();
+    const [letterBg, setletterBg] = useState();
 
     let article;
     if(props.mode === 'laptop'){
@@ -26,7 +28,9 @@ const Custom = (props) => {
                     brand={laptopBrand}/>
     }
     else if(props.mode === 'letter'){
-        article = <Letter />
+        article = <Letter 
+                    sticker={letterStk}
+                    bg={letterBg}/>
     } 
 
     const [btnColour, setBtnColour] = useState();
@@ -38,19 +42,50 @@ const Custom = (props) => {
             setBtnColour('#1fb4a2');
         }
     }, [props.mode]);
-    
+
+    //implement logic when a user click the change btn.
+    //state, (buttons) onClick func ~ setState, useEffect? or just conditional?
+    const [show, setShow] = useState(false);
+    //if I insert the console line in onShow~ func, it doesn't show changing 'show' state immediately. This is solution
+    // useEffect(()=>{
+    //     console.log(show);
+    // }, [show]);
+    let optionView;
+    if(show === true){
+        optionView = <OptSlide
+                        opt={options}
+                        onChangeLapCol={(colour)=>{
+                            setLaptopColour(colour);
+                        }}
+                        onChangeLapBrd={(brd)=>{
+                            setLaptopBrand(brd);
+                        }}
+                        onChangeStk={(stk)=>{
+                            setLetterStk(stk);
+                        }}
+                        onChangeBg={(bg)=>{
+                            setletterBg(bg);
+                        }}/>
+    }
 
     return(
         <div>
-            <div>
+            <header>
                 <span>if&#40;</span>
                 <span>{sub}</span>
                 <span>&nbsp;==&nbsp;true&#41;&#123;&nbsp;printf&#40;&#34;</span>
                 <span>{title}</span>
                 <span>&#34;&#41;&#59;&nbsp;&#125;</span>
-            </div>
-            {article}
-            <Buttons colour={btnColour}/>
+            </header>
+            <main>
+                {article}
+                {optionView}
+            </main>  
+            <Buttons
+                colour={btnColour}
+                onShowOptions={(bool) => {
+                    setShow(bool);
+                }}/>
         </div>
     );
 }

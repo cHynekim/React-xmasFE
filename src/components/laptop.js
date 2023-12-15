@@ -16,7 +16,9 @@ const Laptop = (props)=>{
     }
     
     return(
-        <img src={`${src}`} />
+        <div>
+            <img src={`${src}`} />
+        </div>
     );
 }
 export default Laptop;
