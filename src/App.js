@@ -33,7 +33,7 @@ function App() {
   custom = <Custom mode={customMode} sub={sub} title={title} option={option} />
   // console.log(customMode); // => 새노트북만들기btn 클릭 시 laptop 출력 잘 됨!
   // console.log(sub, title, option); // => 이것도 굿
-  //08 dec, 여기까지 작업 / 후에 custom 개발하기
+
   //외부 링크에서 편지 작성 btn 클릭시 modeChange 로직도 구현해야함
   return (
     <div className='App'>

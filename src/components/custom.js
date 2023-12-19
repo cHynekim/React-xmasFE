@@ -47,12 +47,13 @@ const Custom = (props) => {
     //state, (buttons) onClick func ~ setState, useEffect? or just conditional?
     const [show, setShow] = useState(false);
     //if I insert the console line in onShow~ func, it doesn't show changing 'show' state immediately. This is solution
-    // useEffect(()=>{
-    //     console.log(show);
-    // }, [show]);
+    useEffect(()=>{
+        console.log(laptopBrand);
+    }, [laptopBrand]);
     let optionView;
     if(show === true){
         optionView = <OptSlide
+                        mode={props.mode}
                         opt={options}
                         onChangeLapCol={(colour)=>{
                             setLaptopColour(colour);
