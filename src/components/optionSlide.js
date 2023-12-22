@@ -31,21 +31,21 @@ const OptSlide = (props) => {
             }>grab</button>
         </div>
         items2 = <div>
-            <div onClick={
+            <button onClick={
                 (e)=>{
-                    props.onChangeLapCol('white')
+                    props.onChangeLapCol('white');
                 }
-            }>파</div>
-            <div onClick={
+            }>흰</button>
+            <button onClick={
                 (e)=>{
-                    props.onChangeLapCol('black')
+                    props.onChangeLapCol('black');
                 }
-            }>검</div>
-            <div onClick={
+            }>검</button>
+            <button onClick={
                 (e)=>{
-                    props.onChangeLapCol('navy')
+                    props.onChangeLapCol('navy');
                 }
-            }>흰</div>
+            }>파</button>
         </div>
     }
 
@@ -64,4 +64,7 @@ const OptSlide = (props) => {
         </nav>
     );
 }
+//12 Dec, 졸려서 여기까지만 laptop mode 시에 나오는 속성들만 구현
+//다음 번엔 laptop.js에 이미지 import 열결
+
 export default OptSlide;
