@@ -5,6 +5,9 @@ const Letter = (props)=>{
     if(props.bg === '#3d3d3d'){
         fontColour = '#366EFF';
     }
+    else if(props.bg === '#AFE191' || props.bg === '#FFCA66'){
+        fontColour = '#333';
+    }
     else{
         fontColour = '#F9F9F9';
     }

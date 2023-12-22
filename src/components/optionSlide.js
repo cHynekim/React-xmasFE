@@ -91,6 +91,9 @@ const OptSlide = (props) => {
             >br</button>
         </div>
     }
+    //23 Dec, letter부 배경선택까지 구현 완료
+    //다음 번에 스티커 삽입 후 스티커 핸들링까지 하면 됨
+    //마치고 ~> 메인화면 구현하기 ~> 메인화면 btn에 setCustomMode 삽입 후 letter mode로 변경 algor 짜야함ㅁ함함
 
     return(
         <nav style={{width:'300px', height:'500px', backgroundColor:'palegreen'}}>
