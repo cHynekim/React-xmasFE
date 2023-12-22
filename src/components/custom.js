@@ -13,13 +13,10 @@ const Custom = (props) => {
     options = props.option;
 
     //default value
-    const [laptopColour, setLaptopColour] = useState(
-        //onClick func은 설정슬라이드 컴포넌트에 설정할 것
-        'white'
-    );
+    const [laptopColour, setLaptopColour] = useState('white');
     const [laptopBrand, setLaptopBrand] = useState('samsung');
     const [letterStk, setLetterStk] = useState();
-    const [letterBg, setletterBg] = useState();
+    const [letterBg, setletterBg] = useState('#3d3d3d');
 
     let article;
     if(props.mode === 'laptop'){
@@ -46,6 +43,7 @@ const Custom = (props) => {
     //implement logic when a user click the change btn.
     //state, (buttons) onClick func ~ setState, useEffect? or just conditional?
     const [show, setShow] = useState(false);
+
     //if I insert the console line in onShow~ func, it doesn't show changing 'show' state immediately. This is solution
     useEffect(()=>{
         console.log(laptopBrand);
@@ -79,8 +77,8 @@ const Custom = (props) => {
                 <span>&#34;&#41;&#59;&nbsp;&#125;</span>
             </header>
             <main>
-                {article}
-                {optionView}
+                {article}   {/*laptop or letter*/}
+                {optionView}    {/*option box*/}
             </main>  
             <Buttons
                 colour={btnColour}

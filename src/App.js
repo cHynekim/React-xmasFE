@@ -5,8 +5,8 @@ import Custom from './components/custom.js';
 import { useState } from 'react';
 
 function App() {
-  //laptop, letter 각각 두 state 이용 : default, laptop
-  const [customMode, setCustomMode] = useState('laptop');
+  //laptop, letter 각각 두 state 이용 ( default, laptop )
+  const [customMode, setCustomMode] = useState('letter');
   //Routing 후에는 'laptop' 삭제할 것
   //위의 setCustomMode는 각각 트리거 버튼이 있는 컴포넌트로 함수에 싸서 보내기 (후에 해당 component에서 onClick 구현)
   const [contents, setContents] = useState([

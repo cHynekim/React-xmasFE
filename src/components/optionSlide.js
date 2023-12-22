@@ -6,6 +6,8 @@ const OptSlide = (props) => {
     //set some variables to put contents of options
     //아오 김채현 제발 커밋 전에 다음 번에 어떻게 해야하는지 적고 커밋하라고 시발 다 다시 읽어야하잖알어ㅏㄹ아ㅓㅣㄴㄹ
 
+    //options slide context ~> evt listener
+    //나중에 스타일 바꿀 때 Laptop-colour 버튼 말고 컬러박스로 변경
     let items1, items2;
     if(props.mode === 'laptop'){
         items1 = <div>
@@ -47,9 +49,9 @@ const OptSlide = (props) => {
                 }
             }>파</button>
         </div>
+    }else if(props.mode === 'letter'){
+
     }
-
-
 
     return(
         <nav style={{width:'300px', height:'500px', backgroundColor:'palegreen'}}>
@@ -64,7 +66,5 @@ const OptSlide = (props) => {
         </nav>
     );
 }
-//12 Dec, 졸려서 여기까지만 laptop mode 시에 나오는 속성들만 구현
-//다음 번엔 laptop.js에 이미지 import 열결
 
 export default OptSlide;
