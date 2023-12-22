@@ -50,7 +50,46 @@ const OptSlide = (props) => {
             }>파</button>
         </div>
     }else if(props.mode === 'letter'){
+        items1 = <div>
 
+        </div>
+        items2 = <div>
+            <button
+            onClick={
+                (e)=>{
+                    props.onChangeBg('#3d3d3d');
+                }
+            }
+            >bk</button>
+            <button
+                onClick={
+                    (e)=>{
+                        props.onChangeBg('#42B4E6');
+                    }
+                }
+            >bl</button>
+            <button
+            onClick={
+                (e)=>{
+                    props.onChangeBg('#AFE191');
+                }
+            }
+            >gr</button>
+            <button
+                onClick={
+                    (e)=>{
+                        props.onChangeBg('#FFCA66');
+                    }
+                }
+            >yw</button>
+            <button
+                onClick={
+                    (e)=>{
+                        props.onChangeBg('#984B3A');
+                    }
+                }
+            >br</button>
+        </div>
     }
 
     return(

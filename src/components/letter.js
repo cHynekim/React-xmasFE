@@ -5,6 +5,9 @@ const Letter = (props)=>{
     if(props.bg === '#3d3d3d'){
         fontColour = '#366EFF';
     }
+    else{
+        fontColour = '#F9F9F9';
+    }
 
     const styles = {
         box : {
@@ -17,7 +20,7 @@ const Letter = (props)=>{
         letterBox : {
             width : '500px',
             height : '250px',
-            opacity : '0.1',
+            opacity : '0.2',
             backgroundColor : '#e5e5e5',
             borderRadius : '35px'
         }
@@ -29,7 +32,8 @@ const Letter = (props)=>{
             Test
             <header></header> {/**stiker section */}
             <section>
-                <input></input>
+                <label for="name">From.</label>
+                <input name="name"></input>
                 <div style={styles.letterBox}>
                     <textarea></textarea>
                 </div>
