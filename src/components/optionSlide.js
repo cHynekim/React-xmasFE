@@ -1,10 +1,19 @@
+import reactStk from "../res/img/stickers/react.png";
+import cplusStk from "../res/img/stickers/cplus.png";
+import javaStk from "../res/img/stickers/java.png";
+import pythonStk from "../res/img/stickers/python.png";
+
+
 const OptSlide = (props) => {
     // console.log(props);
     let opt1, opt2;
     opt1 = props.opt.opt1;
     opt2 = props.opt.opt2;
-    //set some variables to put contents of options
-    //아오 김채현 제발 커밋 전에 다음 번에 어떻게 해야하는지 적고 커밋하라고 시발 다 다시 읽어야하잖알어ㅏㄹ아ㅓㅣㄴㄹ
+
+    //임시 이미지 스타일 (원본겁나큼이슈!)
+    const imgSizeStyle = {
+        width : '50px'
+    }
 
     //options slide context ~> evt listener
     //나중에 스타일 바꿀 때 Laptop-colour 버튼 말고 컬러박스로 변경
@@ -50,8 +59,30 @@ const OptSlide = (props) => {
             }>파</button>
         </div>
     }else if(props.mode === 'letter'){
+        //scrollView, style of the outermost div contain overflow prop
         items1 = <div>
-
+            <div>
+                <a onClick={
+                    (e)=>{
+                        props.onChangeStk('react');
+                    }
+                }><img src={reactStk} alt="react sticker" style={imgSizeStyle}/></a>
+                <a onClick={
+                    (e)=>{
+                        props.onChangeStk('java');
+                    }
+                }><img src={javaStk} alt="java sticker" style={imgSizeStyle}/></a>
+                <a onClick={
+                    (e)=>{
+                        props.onChangeStk('python');
+                    }
+                }><img src={pythonStk} alt="python sticker" style={imgSizeStyle}/></a>
+                <a onClick={
+                    (e)=>{
+                        props.onChangeStk('cplus');
+                    }
+                }><img src={cplusStk} alt="cplus sticker" style={imgSizeStyle}/></a>
+            </div>
         </div>
         items2 = <div>
             <button
@@ -109,4 +140,4 @@ const OptSlide = (props) => {
     );
 }
 
-export default OptSlide;
+export {OptSlide, reactStk, pythonStk, javaStk, cplusStk};

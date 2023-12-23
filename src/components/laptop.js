@@ -13,13 +13,12 @@ import lgnavy from '../res/img/lgnavy.png'
 import lgblack from '../res/img/lgblack.png'
 
 const Laptop = (props)=>{
-    //세부 설정에서 기종/색상 선택하면 img 경로 변경 => props로 값 받기
-    //useState 사용해야함
     // console.log(props);
     let colour, brand, src;
     colour = props.colour;
     brand = props.brand;
     
+    //img path is refered to laptopBrand state
     if(brand === 'samsung'){
         colour === 'white' ? src=samsungwhite : colour === 'navy' ? src=samsungnavy : src=samsungblack;
     }

@@ -3,7 +3,7 @@ import Laptop from "./laptop";
 import Letter from "./letter";
 import Buttons from "./buttons";
 import { useEffect } from "react";
-import OptSlide from "./optionSlide";
+import { OptSlide } from "./optionSlide";
 
 const Custom = (props) => {
     let sub, title, options;
@@ -15,7 +15,7 @@ const Custom = (props) => {
     //default value
     const [laptopColour, setLaptopColour] = useState('white');
     const [laptopBrand, setLaptopBrand] = useState('samsung');
-    const [letterStk, setLetterStk] = useState();
+    const [letterStk, setLetterStk] = useState('react');
     const [letterBg, setletterBg] = useState('#3d3d3d');
 
     let article;
@@ -46,8 +46,8 @@ const Custom = (props) => {
 
     //if I insert the console line in onShow~ func, it doesn't show changing 'show' state immediately. This is solution
     useEffect(()=>{
-        console.log(laptopBrand);
-    }, [laptopBrand]);
+        console.log(letterStk);
+    }, [letterStk]);
     let optionView;
     if(show === true){
         optionView = <OptSlide

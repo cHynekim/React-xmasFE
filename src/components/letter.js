@@ -1,6 +1,7 @@
+import { reactStk, pythonStk, javaStk, cplusStk } from "./optionSlide";
+
 const Letter = (props)=>{
-    //세부 설정에서 스티커/배경 선택하면 스타일(bg, color) 변경 -> props로 값 받기
-    //useState 사용해야함
+    //change font colour according to bg colour
     let fontColour;
     if(props.bg === '#3d3d3d'){
         fontColour = '#366EFF';
@@ -10,6 +11,21 @@ const Letter = (props)=>{
     }
     else{
         fontColour = '#F9F9F9';
+    }
+
+    //letters' main sticker is decided by clicking stikers in optSlide comp.
+    let stk;
+    if(props.sticker === 'react'){
+        stk = <img src={reactStk} alt="chosen sticker" style={{width : '50px'}}/>
+    }
+    else if(props.sticker === 'java'){
+        stk = <img src={javaStk} alt="chosen sticker" style={{width : '50px'}}/>
+    }
+    else if(props.sticker === 'python'){
+        stk = <img src={pythonStk} alt="chosen sticker" style={{width : '50px'}}/>
+    }
+    else if(props.sticker === 'cplus'){
+        stk = <img src={cplusStk} alt="chosen sticker" style={{width : '50px'}}/>
     }
 
     const styles = {
@@ -28,15 +44,17 @@ const Letter = (props)=>{
             borderRadius : '35px'
         }
     }
-    console.log(styles.box);
+    // console.log(styles.box);
 
     return(
         <div style={styles.box}>
-            Test
-            <header></header> {/**stiker section */}
+            color test {/**style test text */}
+            <header>    
+                {stk}
+            </header>
             <section>
-                <label for="name">From.</label>
-                <input name="name"></input>
+                <label htmlFor="name">From.</label>
+                <input name="name" placeholder="이름/별명을 입력해주세요..."></input>
                 <div style={styles.letterBox}>
                     <textarea></textarea>
                 </div>
