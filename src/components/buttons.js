@@ -18,7 +18,10 @@ const Buttons = (props) => {
     }
     else if(props.mode === 'main'){
         btn = <div>
-
+            <button
+                style={{color : props.colour}}>편지 전체 읽기</button>
+            <button
+                style={{backgroundColor : props.colour}}>링크 복사</button>
         </div>
     }
 

@@ -62,23 +62,27 @@ const OptSlide = (props) => {
         //scrollView, style of the outermost div contain overflow prop
         items1 = <div>
             <div>
-                <a onClick={
+                <a href="/" onClick={
                     (e)=>{
+                        e.preventDefault();
                         props.onChangeStk('react');
                     }
                 }><img src={reactStk} alt="react sticker" style={imgSizeStyle}/></a>
-                <a onClick={
+                <a href="/" onClick={
                     (e)=>{
+                        e.preventDefault();
                         props.onChangeStk('java');
                     }
                 }><img src={javaStk} alt="java sticker" style={imgSizeStyle}/></a>
-                <a onClick={
+                <a href="/" onClick={
                     (e)=>{
+                        e.preventDefault();
                         props.onChangeStk('python');
                     }
                 }><img src={pythonStk} alt="python sticker" style={imgSizeStyle}/></a>
-                <a onClick={
+                <a href="/" onClick={
                     (e)=>{
+                        e.preventDefault();
                         props.onChangeStk('cplus');
                     }
                 }><img src={cplusStk} alt="cplus sticker" style={imgSizeStyle}/></a>
@@ -131,8 +135,11 @@ const OptSlide = (props) => {
     //main comp 구상
     //laptop comp 재사용, btn comp 수정
     //App 내, mode state <- 'main' 추가, main mode가 default로 (완)
-    //custom 내, 이걸로 하기 btn 누르면 setCustomMode('main')되게 onClick 설정
-    //btn 내, props로 mode 받아서 조건문으로 button 태그 담긴 변수 지정
+    //custom 내, 이걸로 하기 btn 누르면 setCustomMode('main')되게 onClick 설정(완)
+    //btn 내, props로 mode 받아서 조건문으로 button 태그 담긴 변수 지정(완)
+
+    //24 Dec, btn/App/custom comp 수정 완료
+    //main Comp 만들기
     
     return(
         <nav style={{width:'300px', height:'500px', backgroundColor:'palegreen'}}>

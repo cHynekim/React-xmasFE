@@ -35,7 +35,7 @@ const Custom = (props) => {
         if(props.mode === 'laptop'){
             setBtnColour('#f66');
         }
-        else if(props.mode === 'letter'){
+        else if(props.mode === 'letter' || props.mode === 'main'){
             setBtnColour('#1fb4a2');
         }
     }, [props.mode]);
