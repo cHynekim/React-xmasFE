@@ -84,7 +84,10 @@ const Custom = (props) => {
                 colour={btnColour}
                 onShowOptions={(bool) => {
                     setShow(bool);
-                }}/>
+                }}
+                //sending laptop, letter, main mode changer func & currunt mode state
+                mode={props.mode}
+                onChangeMode={props.onChangeMode}/>
         </div>
     );
 }

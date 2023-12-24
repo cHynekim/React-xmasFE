@@ -2,13 +2,18 @@ import logo from './logo.svg';
 import './App.css';
 import Login from './components/login.js';
 import Custom from './components/custom.js';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
   //laptop, letter 각각 두 state 이용 ( default, laptop )
   const [customMode, setCustomMode] = useState('letter');
-  //Routing 후에는 'laptop' 삭제할 것
+  //Routing 후에, main comp 완성 후엔 'laptop' 삭제할 것
   //위의 setCustomMode는 각각 트리거 버튼이 있는 컴포넌트로 함수에 싸서 보내기 (후에 해당 component에서 onClick 구현)
+  
+  // useEffect(()=>{
+  //   console.log(customMode)
+  // }, [customMode]);
+  
   const [contents, setContents] = useState([
     {sub : 'logIn', title : '노트북을 고르시오.'},
     {sub : 'writing', title : '편지를 만드시오.'}
@@ -30,7 +35,17 @@ function App() {
     title = contents[1].title;
     option = options[1];
   }
-  custom = <Custom mode={customMode} sub={sub} title={title} option={option} />
+  else{
+    option = {opt1 : '', opt2 : ''};
+  }
+  custom = <Custom 
+              mode={customMode}
+              sub={sub} 
+              title={title} 
+              option={option} 
+              onChangeMode={(mode)=>{
+                setCustomMode(mode);
+              }}/>
   // console.log(customMode); // => 새노트북만들기btn 클릭 시 laptop 출력 잘 됨!
   // console.log(sub, title, option); // => 이것도 굿
 

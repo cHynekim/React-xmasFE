@@ -29,7 +29,7 @@ const Login = (props) => {
                     onChangeToggle={()=>{
                         setToggle(!toggle);
                     }}
-                    //노트북/편지 모드 변경 함수 전달
+                    //sending the mode changer func
                     onChangeMode={props.onChangeMode}>
                 </LogBtn>
             </div>

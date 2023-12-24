@@ -130,7 +130,7 @@ const OptSlide = (props) => {
     //다음 번에 메인 컴포넌트 짜고 메인화면 btn에 setCustomMode 삽입 작업까지 완료하기
     //main comp 구상
     //laptop comp 재사용, btn comp 수정
-    //App 내, mode state <- 'main' 추가, main mode가 default로
+    //App 내, mode state <- 'main' 추가, main mode가 default로 (완)
     //custom 내, 이걸로 하기 btn 누르면 setCustomMode('main')되게 onClick 설정
     //btn 내, props로 mode 받아서 조건문으로 button 태그 담긴 변수 지정
     
